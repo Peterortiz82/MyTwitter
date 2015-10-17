@@ -1,6 +1,7 @@
 # My Twitter
 
-Simple Twitter client | used for Izea Rails-Interview
+Simple Twitter client | used for Izea Rails-Interview  
+Check out the live app [Click here](http://mytwitterapp.herokuapp.com/)!
 
 ## Requirements
 
