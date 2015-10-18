@@ -13,6 +13,9 @@ gem 'annotate', '~> 2.6.10'
 gem 'haml-rails', '~> 0.9.0'
 gem 'nilify_blanks', '~> 1.2.1'
 gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'omniauth-twitter', '~> 1.2.1'
+gem 'twitter', '~> 5.15.0'
+gem 'figaro', '~> 1.1.1'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do
