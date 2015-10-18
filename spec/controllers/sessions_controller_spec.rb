@@ -22,7 +22,7 @@ describe SessionsController do
 
     it "redirect the user to the root url" do
       subject
-      expect(response).to redirect_to root_url
+      expect(response).to redirect_to root_path
     end
 
   end
@@ -38,7 +38,7 @@ describe SessionsController do
 
     it "redirect to the home page" do
       delete :destroy
-      expect(response).to redirect_to root_url
+      expect(response).to redirect_to root_path
     end
   end
 
