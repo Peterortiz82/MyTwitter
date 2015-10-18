@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id          :integer          not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  provider    :string
+#  uid         :string
+#  name        :string
+#  location    :string
+#  image       :string
+#  description :string
+#  token       :string
+#  secret      :string
+#
+
 require 'rails_helper'
 
 describe User do

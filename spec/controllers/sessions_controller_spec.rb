@@ -11,7 +11,7 @@ describe SessionsController do
     subject { post :create, provider: :twitter }
 
     it "successfully create a user" do
-      expect(subject).to change{ User.count }.by(1)
+      expect{ subject }.to change(User, :count).by(1)
     end
 
     it "successfully create a session" do
