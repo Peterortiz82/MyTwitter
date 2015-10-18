@@ -19,15 +19,31 @@
 require 'factory_girl_rails'
 require 'database_cleaner'
 
+# config for using OmniAuth in tests
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+                                                                 provider: "twitter",
+                                                                 uid: "123456",
+                                                                 info: {
+                                                                     name: "Mock User",
+                                                                     location: "Orlando, FL",
+                                                                     image: "mock_user_thumbnail_url",
+                                                                     description: "I love testing apps!",
+                                                                 },
+                                                                 credentials: {
+                                                                     token: "a1b2c3d4",
+                                                                     secret: "abcdef1234"
+                                                                 }
+                                                             })
+
 RSpec.configure do |config|
 
+  # Prevents from having to call FactoryGirl.create, build, ect. within the spec.
   config.include FactoryGirl::Syntax::Methods
 
-  config.include Warden::Test::Helpers
-
+  # allows for a fresh test db on each run.
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
-    Warden.test_mode!
   end
 
   config.before(:each) do |example|
@@ -37,7 +53,6 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
-    Warden.test_reset!
   end
 
   # rspec-expectations config goes here. You can use an alternate
@@ -63,8 +78,8 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-# The settings below are suggested to provide a good initial experience
-# with RSpec, but feel free to customize to your heart's content.
+  # The settings below are suggested to provide a good initial experience
+  # with RSpec, but feel free to customize to your heart's content.
 =begin
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
