@@ -18,6 +18,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'factory_girl_rails'
 require 'database_cleaner'
+require 'omniauth'
 
 # config for using OmniAuth in tests
 OmniAuth.config.test_mode = true
