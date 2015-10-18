@@ -29,12 +29,17 @@ describe SessionsController do
 
   describe "#destroy" do
 
-    subject { post :create, provider: :twitter }
+    it "clears the session" do
+      post :create, provider: :twitter
+      expect(session[:user_id]).not_to eq nil
+      delete :destroy
+      expect(session[:user_id]).to eq nil
+    end
 
-    it "clears the session"
-
-    it "redirect to the home page"
-
+    it "redirect to the home page" do
+      delete :destroy
+      expect(response).to redirect_to root_url
+    end
   end
 
 end
