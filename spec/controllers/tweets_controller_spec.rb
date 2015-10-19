@@ -9,7 +9,7 @@ describe TweetsController do
     end
 
     it 'renders the index template' do
-      epxect(response).to render_template(:index)
+      expect(response).to render_template(:index)
     end
   end
 
