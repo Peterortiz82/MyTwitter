@@ -30,7 +30,4 @@ test:
   database: my_twitter_test
 
 production:
-  <<: *default
-  database: my_twitter_production
-  username: my_twitter
-  password: <%= ENV['MY_TWITTER_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
