@@ -1,2 +1,4 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+.jumbotron
+  %h1 MyTwitter!
+  - if !current_user
+    = link_to "Sign in with Twitter", "/auth/twitter", class: 'btn btn-primary btn-lg'
