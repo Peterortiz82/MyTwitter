@@ -14,7 +14,7 @@ describe Tweet do
   end
 
   it 'will not allow a tweet_body to exceed 140 characters' do
-    subject.tweet_body = 'This tweet is more than 140 characters long and is not a valid tweet. This tweet is more than 140 characters long and is not a valid tweet.'
+    subject.tweet_body = 'a' * 141
     expect(subject).not_to be_valid
     subject.tweet_body = 'This is a valid tweet!'
     expect(subject).to be_valid
