@@ -22,7 +22,7 @@ describe SessionsController do
 
     it "redirect the user to the root url" do
       subject
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to tweets_path
     end
   end
 

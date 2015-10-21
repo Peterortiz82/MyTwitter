@@ -4,7 +4,8 @@
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
-    = link_to 'MyTwitter', root_path, class: "navbar-brand"
+    - if !current_user
+      = link_to 'MyTwitter', root_path, class: "navbar-brand"
     - if current_user
       .navbar-collapse.collapse.navbar-responsive-collapse
         .navbar-right

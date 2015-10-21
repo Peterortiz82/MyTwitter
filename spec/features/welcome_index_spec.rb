@@ -17,8 +17,8 @@ describe 'Welcome index' do
       click_on 'Sign in with Twitter'
     end
 
-    it 'redirects user to the root path and displays a success message' do
-      expect(current_path).to eq root_path
+    it 'redirects user to the tweets index page and displays a success message' do
+      expect(current_path).to eq tweets_path
       expect(page).to have_content 'You have signed in successfully!'
     end
 
