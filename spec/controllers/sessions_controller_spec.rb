@@ -1,13 +1,11 @@
 require 'rails_helper'
 
 describe SessionsController do
-
-  before do
+  before {
     request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:twitter]
-  end
+  }
 
   describe "#create" do
-
     subject { post :create }
 
     it "successfully create a user" do
@@ -27,7 +25,6 @@ describe SessionsController do
   end
 
   describe "#destroy" do
-
     it "clears the session" do
       post :create
       expect(session[:user_id]).not_to eq nil

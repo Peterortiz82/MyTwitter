@@ -20,6 +20,16 @@ require 'factory_girl_rails'
 require 'database_cleaner'
 require 'omniauth'
 
+# stub current_user
+def signed_in_user(user)
+  allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+end
+
+# stub post_to_twitter
+def can_post_to_twitter(user)
+  allow_any_instance_of(Tweet).to receive(:post_to_twitter).and_return(user)
+end
+
 # config for using OmniAuth in tests
 OmniAuth.config.test_mode = true
 OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({

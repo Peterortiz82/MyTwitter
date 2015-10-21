@@ -2,10 +2,11 @@ require 'rails_helper'
 
 describe TweetsController do
   let(:user) { create :user }
-  let!(:tweet) { create :tweet }
+  let(:tweet) { build :tweet }
 
   before {
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    signed_in_user(user)
+    can_post_to_twitter(user)
   }
 
   describe 'GET index' do
@@ -33,11 +34,12 @@ describe TweetsController do
   end
 
   describe 'POST create' do
-    subject { post :create,
-                   tweet_id: tweet.id,
-                   tweet: {
-                       tweet_body: tweet.tweet_body
-                   }
+    subject {
+      post :create,
+           tweet_id: tweet.id,
+           tweet: {
+               tweet_body: tweet.tweet_body
+           }
     }
 
     it 'successfully creates a tweet' do

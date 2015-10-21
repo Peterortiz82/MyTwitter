@@ -1,14 +1,15 @@
 require 'rails_helper'
 
 describe 'Posting a tweet' do
+  before {
+    signed_in_user(user)
+    can_post_to_twitter(user)
+    visit new_tweet_path
+  }
+
   describe 'new page' do
     let(:user) { create :user }
     let(:tweet) { create :tweet, user: user }
-
-    before {
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      visit new_tweet_path
-    }
 
     it 'shows Compose a new Tweet' do
       expect(page).to have_content 'Compose new Tweet'

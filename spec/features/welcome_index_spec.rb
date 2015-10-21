@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe 'Welcome index' do
 
-  before do
+  before {
     visit root_path
-  end
+  }
 
   it 'has a Sign in with Twitter button' do
     expect(page).to have_content 'Sign in with Twitter'
@@ -13,9 +13,9 @@ describe 'Welcome index' do
   context 'sign in' do
     let(:user) { create :user }
 
-    before do
+    before {
       click_on 'Sign in with Twitter'
-    end
+    }
 
     it 'redirects user to the tweets index page and displays a success message' do
       expect(current_path).to eq tweets_path
