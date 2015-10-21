@@ -1,12 +1,7 @@
 # My Twitter
 
-Simple Twitter client | used for Izea Rails-Interview  
+Simple Twitter client 
 Check out the live app [Click here](http://mytwitterapp.herokuapp.com/)!
-
-## Requirements
-
-* The application can be built with Rails 3.2.x or 4.2.x.
-* The application should be deployed to [Heroku][] or [Amazon AWS][aws].
 
 ## User Stories
 
@@ -15,7 +10,4 @@ Check out the live app [Click here](http://mytwitterapp.herokuapp.com/)!
 * The user should be able to view historical tweets from their timeline.
 * The historical tweets should be stored in the local database.
 
-[aws]: http://aws.amazon.com/
-[heroku]: https://www.heroku.com/
-[twitter-api]: https://dev.twitter.com/overview/documentation
 

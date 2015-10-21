@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe TweetsController do
+  let(:user) { create :user }
+  let!(:tweet) { create :tweet }
+
+  before {
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+  }
+
   describe 'GET index' do
     before { get :index }
 
@@ -26,13 +33,18 @@ describe TweetsController do
   end
 
   describe 'POST create' do
-    subject { post :create }
+    subject { post :create,
+                   tweet_id: tweet.id,
+                   tweet: {
+                       tweet_body: tweet.tweet_body
+                   }
+    }
 
     it 'successfully creates a tweet' do
       expect { subject }.to change(Tweet, :count).by(1)
     end
 
-    it 'redirect to tweets#index page' do
+    it 'redirects to tweets#index page' do
       subject
       expect(response).to redirect_to tweets_path
     end

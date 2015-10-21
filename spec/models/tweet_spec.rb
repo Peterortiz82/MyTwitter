@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: tweets
+#
+#  id         :integer          not null, primary key
+#  tweet_body :text
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'rails_helper'
 
 describe Tweet do

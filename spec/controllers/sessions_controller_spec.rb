@@ -8,10 +8,10 @@ describe SessionsController do
 
   describe "#create" do
 
-    subject { post :create, provider: :twitter }
+    subject { post :create }
 
     it "successfully create a user" do
-      expect{ subject }.to change(User, :count).by(1)
+      expect { subject }.to change(User, :count).by(1)
     end
 
     it "successfully create a session" do
@@ -24,13 +24,12 @@ describe SessionsController do
       subject
       expect(response).to redirect_to root_path
     end
-
   end
 
   describe "#destroy" do
 
     it "clears the session" do
-      post :create, provider: :twitter
+      post :create
       expect(session[:user_id]).not_to eq nil
       delete :destroy
       expect(session[:user_id]).to eq nil
@@ -41,5 +40,4 @@ describe SessionsController do
       expect(response).to redirect_to root_path
     end
   end
-
 end
