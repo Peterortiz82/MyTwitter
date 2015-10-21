@@ -1,0 +1,9 @@
+- if @tweet.errors.any?
+  %ul.errors
+    - @tweet.errors.full_messages.each do |msg|
+      %li= msg
+
+= form_for @tweet do |f|
+  = f.label :tweet_body, 'Compose new Tweet'
+  = f.text_area :tweet_body, placeholder: "What's happening?"
+  = f.submit 'Tweet'
