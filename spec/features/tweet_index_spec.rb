@@ -14,6 +14,10 @@ describe 'Tweets index' do
     expect(page).to have_selector('h1', text: 'Tweets')
   end
 
+  it 'will display correct message when there are not tweets' do
+    expect(page).to have_content 'Post your first tweet!'
+  end
+
   context 'for a user who has tweets' do
     let(:tweet) { build :tweet, user: user }
     let(:other_users_tweet) { create :tweet, user: other_user }
