@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   before_action :signed_in_user
 
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.where(user_id: current_user.id)
   end
 
   def new

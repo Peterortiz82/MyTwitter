@@ -11,3 +11,4 @@
           %ul.nav.navbar-nav
             = image_tag current_user.image, class: 'twitter-image'
             %li= link_to "Sign Out", signout_path
+            = link_to 'Tweet', new_tweet_path, class: 'btn btn-default'

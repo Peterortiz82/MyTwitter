@@ -21,7 +21,7 @@ describe 'Posting a tweet' do
     describe 'Form submission' do
       context 'with no content' do
         it 'renders new and shows error message' do
-          click_on 'Tweet'
+          click_on 'Post Tweet'
           expect(current_path).to eq tweets_path
           expect(page).to have_content "Tweet body can't be blank"
         end
@@ -30,7 +30,7 @@ describe 'Posting a tweet' do
       context 'when posting a tweet that is more than 140 characters' do
         it 'renders new and shows error message' do
           fill_in 'Compose new Tweet', with: "a"*141
-          click_on 'Tweet'
+          click_on 'Post Tweet'
           expect(page).to have_content 'Tweet body is too long (maximum is 140 characters)'
         end
       end
@@ -38,7 +38,7 @@ describe 'Posting a tweet' do
       context 'with correct content' do
         before {
           fill_in 'Compose new Tweet', with: tweet.tweet_body
-          click_on 'Tweet'
+          click_on 'Post Tweet'
         }
 
         it 'successfully creates a tweet' do
