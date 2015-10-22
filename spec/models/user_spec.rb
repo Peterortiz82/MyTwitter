@@ -2,17 +2,20 @@
 #
 # Table name: users
 #
-#  id          :integer          not null, primary key
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  provider    :string
-#  uid         :string
-#  name        :string
-#  location    :string
-#  image       :string
-#  description :string
-#  token       :string
-#  secret      :string
+#  id                           :integer          not null, primary key
+#  created_at                   :datetime         not null
+#  updated_at                   :datetime         not null
+#  provider                     :string
+#  uid                          :string
+#  name                         :string
+#  location                     :string
+#  image                        :string
+#  description                  :string
+#  token                        :string
+#  secret                       :string
+#  profile_image_url            :string
+#  profile_background_image_url :string
+#  nickname                     :string
 #
 
 require 'rails_helper'
@@ -34,6 +37,14 @@ describe User do
 
   it 'responds to location' do
     expect(subject).to respond_to(:location)
+  end
+
+  it 'responds to nickname' do
+    expect(subject).to respond_to(:nickname)
+  end
+
+  it 'responds to profile_image_url' do
+    expect(subject).to respond_to(:profile_image_url)
   end
 
   it 'responds to image' do

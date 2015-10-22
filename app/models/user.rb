@@ -2,17 +2,20 @@
 #
 # Table name: users
 #
-#  id          :integer          not null, primary key
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  provider    :string
-#  uid         :string
-#  name        :string
-#  location    :string
-#  image       :string
-#  description :string
-#  token       :string
-#  secret      :string
+#  id                           :integer          not null, primary key
+#  created_at                   :datetime         not null
+#  updated_at                   :datetime         not null
+#  provider                     :string
+#  uid                          :string
+#  name                         :string
+#  location                     :string
+#  image                        :string
+#  description                  :string
+#  token                        :string
+#  secret                       :string
+#  profile_image_url            :string
+#  profile_background_image_url :string
+#  nickname                     :string
 #
 
 class User < ActiveRecord::Base
@@ -22,7 +25,9 @@ class User < ActiveRecord::Base
     user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create
     user.update name: auth_hash.info.name,
                 location: auth_hash.info.location,
+                nickname: auth_hash.info.nickname,
                 image: auth_hash.info.image,
+                profile_image_url: auth_hash.extra.raw_info.profile_image_url.gsub('_normal', ''),
                 description: auth_hash.info.description,
                 token: auth_hash.credentials.token,
                 secret: auth_hash.credentials.secret

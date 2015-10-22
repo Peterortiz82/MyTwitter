@@ -19,7 +19,6 @@ describe 'Welcome index' do
 
     it 'redirects user to the tweets index page and displays a success message' do
       expect(current_path).to eq tweets_path
-      expect(page).to have_content 'You have signed in successfully!'
     end
 
     it 'displays the users image and a Sign Out link in the navbar' do
@@ -37,7 +36,6 @@ describe 'Welcome index' do
       click_on 'Sign in with Twitter'
       click_on 'Sign Out'
       expect(current_path).to eq root_path
-      expect(page).to have_content 'You have signed out.'
     end
   end
 end

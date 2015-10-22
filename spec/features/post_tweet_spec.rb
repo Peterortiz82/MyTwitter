@@ -42,10 +42,6 @@ describe 'Posting a tweet' do
           click_on 'Post Tweet'
         }
 
-        it 'successfully creates a tweet' do
-          expect(page).to have_content 'Your tweet has been posted!'
-        end
-
         it 'redirect you to the tweets index page and displays the tweet' do
           expect(current_path).to eq tweets_path
           expect(page).to have_content tweet.user.name

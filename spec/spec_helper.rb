@@ -36,6 +36,7 @@ OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
                                                                  provider: "twitter",
                                                                  uid: "123456",
                                                                  info: {
+                                                                     nickname: 'MockUser82',
                                                                      name: "Mock User",
                                                                      location: "Orlando, FL",
                                                                      image: "mock_user_thumbnail_url",
@@ -44,6 +45,12 @@ OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
                                                                  credentials: {
                                                                      token: "a1b2c3d4",
                                                                      secret: "abcdef1234"
+                                                                 },
+                                                                 extra: {
+                                                                     access_token: '123dese1223',
+                                                                     raw_info: {
+                                                                         profile_image_url: 'mock_user_url',
+                                                                     }
                                                                  }
                                                              })
 

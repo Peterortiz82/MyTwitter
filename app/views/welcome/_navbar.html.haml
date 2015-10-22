@@ -5,11 +5,13 @@
       %span.icon-bar
       %span.icon-bar
     - if !current_user
-      = link_to 'MyTwitter', root_path, class: "navbar-brand"
-    - if current_user
       .navbar-collapse.collapse.navbar-responsive-collapse
+        .navbar-brand MyTwitter
+        = link_to "Sign in with Twitter", "/auth/twitter", class: 'btn btn-primary pull-right'
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      - if current_user
+      = link_to image_tag(current_user.image), tweets_path, class: 'img-responsive navbar-image'
         .navbar-right
+          = link_to 'Tweet', new_tweet_path, class: 'btn btn-primary'
           %ul.nav.navbar-nav
-            = image_tag current_user.image, class: 'twitter-image'
             %li= link_to "Sign Out", signout_path
-            = link_to 'Tweet', new_tweet_path, class: 'btn btn-default'

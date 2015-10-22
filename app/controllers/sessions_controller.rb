@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
   def create
     user = User.find_or_create_from_auth_hash(auth_hash)
     session[:user_id] = user.id
-    redirect_to tweets_path, notice: 'You have signed in successfully!'
+    redirect_to tweets_path
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: 'You have signed out.'
+    redirect_to root_path
   end
 
   private
