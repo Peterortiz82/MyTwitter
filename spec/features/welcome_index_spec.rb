@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'Welcome index' do
-
   before {
     visit root_path
   }
@@ -28,6 +27,16 @@ describe 'Welcome index' do
 
     it 'does not show the Sign in with Twitter button' do
       expect(page).not_to have_content 'Sign in with Twitter'
+    end
+  end
+
+  context 'singed in user' do
+    let(:logged_in_user) { create :user }
+
+    it 'will be redirected to the tweets#index and not have access to the welcome#index' do
+      signed_in_user(logged_in_user)
+      visit root_path
+      expect(current_path).to eq tweets_path
     end
   end
 
