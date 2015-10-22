@@ -11,7 +11,22 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function () {
+	$('#timeline').hide();
+	$('#show_timeline').click(function (event) {
+		event.preventDefault();
+		$('#tweets').hide();
+		$('#timeline').show();
+	});
+	$('#show_tweets').click(function (event) {
+		event.preventDefault();
+		$('#timeline').hide();
+		$('#tweets').show();
+	});
+});

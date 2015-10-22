@@ -1,0 +1,18 @@
+.col-md-8.pull-right#tweets
+  .panel.panel-default
+    .panel-heading
+      = button_tag 'Show my timeline', id: 'show_timeline', class: 'btn btn-primary btn-lg pull-right'
+      %h1 Tweets
+    - @tweets.each do |t|
+      .panel-heading
+        .media-left.media-middle
+          = image_tag current_user.image, class: 'media-object'
+        .media-body
+          %strong
+            = "@#{t.user.nickname}"
+          %time
+            = time_ago_in_words t.created_at
+            ago
+          %br
+          %tweet-text
+            = t.tweet_body

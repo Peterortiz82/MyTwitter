@@ -8,25 +8,11 @@
           %name
             = @user.name
           %br
-          = @user.location
-  .col-md-8.pull-right
-    .panel.panel-default
-      .panel-heading
-        %h1 Tweets
-      - if @tweets.present?
-        - @tweets.each do |t|
-          .panel-heading
-            .media-left.media-middle
-              = image_tag current_user.image, class: 'media-object'
-            .media-body
-              %strong
-                = "@#{t.user.nickname}" if t.user.nickname
-              %time
-                = time_ago_in_words t.created_at
-                ago
-              %br
-              %tweet-text
-                = t.tweet_body
-      - else
-        %p Post your first tweet!
-        = link_to 'Tweet', new_tweet_path, class: 'btn btn-default'
+          %location
+            = @user.location
+  - if @tweets.nil?
+    %p Post your first tweet!
+    = link_to 'Tweet', new_tweet_path, class: 'btn btn-default'
+  - else
+    = render 'my_tweets'
+  = render 'timeline'

@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
   def index
     @user = current_user
     @tweets = Tweet.where(user_id: current_user.id).order(created_at: 'DESC')
+    @timeline = @user.timeline
   end
 
   def new

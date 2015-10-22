@@ -1,0 +1,18 @@
+.col-md-8.pull-right#timeline
+  .panel.panel-default
+    .panel-heading
+      = button_tag 'Show my tweets', id: 'show_tweets', class: 'btn btn-primary btn-lg pull-right'
+      %h1 Timeline
+    - @timeline.each do |t|
+      .panel-heading
+        .media-left.media-middle
+          = image_tag t.user.profile_image_url_https, class: 'media-object'
+        .media-body
+          %strong
+            = "@#{t.user.screen_name}" if t.user.screen_name
+          %time
+            = time_ago_in_words t.created_at
+            ago
+          %br
+          %tweet-text
+            = auto_link(t.text).html_safe
