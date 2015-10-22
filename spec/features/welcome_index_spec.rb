@@ -41,7 +41,7 @@ describe 'Welcome index' do
   end
 
   context 'sign out' do
-    it 'redirects user to the root path and displays a sign out notice' do
+    it 'redirects user to the root path' do
       click_on 'Sign in with Twitter'
       click_on 'Sign Out'
       expect(current_path).to eq root_path

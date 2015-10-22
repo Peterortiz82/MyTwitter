@@ -18,17 +18,18 @@
 //= require_tree .
 
 $(document).ready(function () {
-	$('#timeline').hide();
-	$('#show_timeline').click(function (event) {
-		event.preventDefault();
-		$('#tweets').hide();
-		$('#no_tweets').hide();
-		$('#timeline').show();
-	});
+	$('#tweets').hide();
+	$('#no_tweets').hide();
 	$('#show_tweets').click(function (event) {
 		event.preventDefault();
 		$('#timeline').hide();
 		$('#no_tweets').show();
 		$('#tweets').show();
+	});
+	$('#show_timeline').click(function (event) {
+		event.preventDefault();
+		$('#tweets').hide();
+		$('#no_tweets').hide();
+		$('#timeline').show();
 	});
 });

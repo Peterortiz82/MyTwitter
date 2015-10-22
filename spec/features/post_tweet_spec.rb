@@ -44,7 +44,7 @@ describe 'Posting a tweet' do
 
         it 'redirect you to the tweets index page and displays the tweet' do
           expect(current_path).to eq tweets_path
-          expect(page).to have_content tweet.user.name
+          expect(page).to have_content tweet.user.nickname
           expect(page).to have_content tweet.tweet_body
         end
       end
