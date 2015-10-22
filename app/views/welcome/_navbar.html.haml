@@ -6,7 +6,8 @@
       %span.icon-bar
     - if !current_user
       .navbar-collapse.collapse.navbar-responsive-collapse
-        .navbar-brand MyTwitter
+        .navbar-brand
+          \#MyTwitter
         = link_to "Sign in with Twitter", "/auth/twitter", class: 'btn btn-primary pull-right'
     .navbar-collapse.collapse.navbar-responsive-collapse
       - if current_user
