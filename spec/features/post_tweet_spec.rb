@@ -11,7 +11,7 @@ describe 'Posting a tweet' do
     let(:user) { create :user }
     let(:tweet) { create :tweet, user: user }
 
-    it 'shows Compose a new Tweet' do
+    it 'shows Compose new Tweet' do
       expect(page).to have_content 'Compose new Tweet'
     end
 
@@ -30,7 +30,7 @@ describe 'Posting a tweet' do
 
       context 'when posting a tweet that is more than 140 characters' do
         it 'renders new and shows error message' do
-          fill_in 'Compose new Tweet', with: "a"*141
+          fill_in 'tweet_tweet_body', with: "a"*141
           click_on 'Post Tweet'
           expect(page).to have_content 'Tweet body is too long (maximum is 140 characters)'
         end
@@ -38,7 +38,7 @@ describe 'Posting a tweet' do
 
       context 'with correct content' do
         before {
-          fill_in 'Compose new Tweet', with: tweet.tweet_body
+          fill_in 'tweet_tweet_body', with: tweet.tweet_body
           click_on 'Post Tweet'
         }
 

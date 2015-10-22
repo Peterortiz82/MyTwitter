@@ -24,7 +24,7 @@ describe 'Tweets index' do
 
     subject {
       visit new_tweet_path
-      fill_in 'Compose new Tweet', with: tweet.tweet_body
+      fill_in 'tweet_tweet_body', with: tweet.tweet_body
       click_on 'Post Tweet'
     }
 
