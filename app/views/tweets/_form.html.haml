@@ -2,8 +2,12 @@
   %ul.errors
     - @tweet.errors.full_messages.each do |msg|
       %li= msg
-
-= form_for @tweet do |f|
-  = f.label :tweet_body, 'Compose new Tweet'
-  = f.text_area :tweet_body, placeholder: "What's happening?"
-  = f.submit 'Post Tweet'
+.col-md-6.center-block
+  .panel.panel-default
+    .panel-heading
+      %h2 Compose new Tweet
+    .panel-body
+      = form_for @tweet do |f|
+        = f.text_area :tweet_body, size: "50x5", placeholder: "What's happening?"
+        %br
+        = f.submit 'Post Tweet', class: 'btn btn-primary pull-right'

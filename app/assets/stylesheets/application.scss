@@ -81,6 +81,10 @@ time {
 	margin-top: 25px;
 }
 
+.panel-default h2 {
+	text-align: center;
+}
+
 .panel-default > .panel-heading {
 	background-color: #FFFFFF;
 }
@@ -96,4 +100,8 @@ time {
 	color: #fff;
 	background-color: rgba(104, 151, 189, 0.81);
 	border-color: rgba(132, 170, 201, 0.65);
+}
+
+textarea {
+	width: 100%;
 }
