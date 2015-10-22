@@ -15,4 +15,4 @@
             ago
           %br
           %tweet-text
-            = t.tweet_body
+            = auto_link(t.tweet_body).html_safe

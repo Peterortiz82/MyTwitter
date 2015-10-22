@@ -2,12 +2,13 @@
   %ul.errors
     - @tweet.errors.full_messages.each do |msg|
       %li= msg
-.col-md-6.center-block
-  .panel.panel-default
-    .panel-heading
-      %h2 Compose new Tweet
-    .panel-body
-      = form_for @tweet do |f|
-        = f.text_area :tweet_body, size: "50x5", placeholder: "What's happening?"
-        %br
-        = f.submit 'Post Tweet', class: 'btn btn-primary pull-right'
+.container
+  .col-md-6.col-md-offset-3
+    .panel.panel-default
+      .panel-heading
+        %h2 Compose new Tweet
+      .panel-body
+        = form_for @tweet do |f|
+          = f.text_area :tweet_body, size: "50x5", placeholder: "What's happening?"
+          %br
+          = f.submit 'Post Tweet', class: 'btn btn-primary pull-right'
