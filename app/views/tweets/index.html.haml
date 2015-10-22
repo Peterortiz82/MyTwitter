@@ -10,9 +10,13 @@
           %br
           %location
             = @user.location
-  - if @tweets.nil?
-    %p Post your first tweet!
-    = link_to 'Tweet', new_tweet_path, class: 'btn btn-default'
+  - if @tweets.empty?
+    .col-md-8.pull-right#no_tweets
+      .panel.panel-default
+        .panel-heading
+          = button_tag 'Show my timeline', id: 'show_timeline', class: 'btn btn-primary btn-lg pull-right'
+          %h1 Post your first tweet!
+          = link_to 'Tweet', new_tweet_path, class: 'btn btn-primary'
   - else
     = render 'my_tweets'
   = render 'timeline'

@@ -22,11 +22,13 @@ $(document).ready(function () {
 	$('#show_timeline').click(function (event) {
 		event.preventDefault();
 		$('#tweets').hide();
+		$('#no_tweets').hide();
 		$('#timeline').show();
 	});
 	$('#show_tweets').click(function (event) {
 		event.preventDefault();
 		$('#timeline').hide();
+		$('#no_tweets').show();
 		$('#tweets').show();
 	});
 });
