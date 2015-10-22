@@ -24,6 +24,15 @@ time {
 	color: #777777;
 }
 
+a {
+	color: #6897BD;
+}
+
+a:hover {
+	color: rgba(104, 151, 189, 0.8);
+	text-decoration: none;
+}
+
 tweet-text {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.2em;
