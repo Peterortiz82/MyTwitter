@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
     @user = current_user
     @tweets = Tweet.where(user_id: current_user.id).order(created_at: 'DESC')
     @timeline = @user.timeline
+    @user_tweets = @user.user_tweets(@user)
   end
 
   def new

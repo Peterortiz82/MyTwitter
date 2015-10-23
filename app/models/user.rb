@@ -43,6 +43,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def user_tweets(user_id)
+    twitter.user_timeline(user_id)
+  end
+
   def timeline
     twitter.home_timeline
   end

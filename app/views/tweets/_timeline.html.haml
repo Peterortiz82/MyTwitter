@@ -2,7 +2,8 @@
   .panel.panel-default
     .panel-heading
       = button_tag 'Show my tweets', id: 'show_tweets', class: 'btn btn-primary btn-lg pull-right'
-      %h1 Timeline
+      %h1
+        = "Timeline for #{@user.name}"
     - @timeline.each do |t|
       .panel-heading
         .media-left.media-middle

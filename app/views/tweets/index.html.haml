@@ -10,7 +10,7 @@
           %br
           %location
             = @user.location
-  - if @tweets.empty?
+  - if @user_tweets.empty?
     .col-md-8.pull-right#no_tweets
       .panel.panel-default
         .panel-heading
