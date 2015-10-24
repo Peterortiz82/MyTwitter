@@ -6,10 +6,10 @@
       .panel-body
         .container
           %name
-            = @user.name
+            = current_user.name
           %br
           %location
-            = @user.location
+            = current_user.location
   - if @user_tweets.empty?
     .col-md-8.pull-right#no_tweets
       .panel.panel-default

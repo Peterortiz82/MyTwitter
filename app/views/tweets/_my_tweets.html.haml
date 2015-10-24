@@ -3,7 +3,7 @@
     .panel-heading
       = button_tag 'Show my timeline', id: 'show_timeline', class: 'btn btn-primary btn-lg pull-right'
       %h1
-        = "Tweets posted by #{@user.name}"
+        = "Tweets posted by #{current_user.name}"
     - @user_tweets.each do |t|
       .panel-heading
         .media-left.media-middle

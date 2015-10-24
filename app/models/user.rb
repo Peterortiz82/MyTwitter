@@ -50,8 +50,4 @@ class User < ActiveRecord::Base
   def timeline
     twitter.home_timeline
   end
-
-  def profile_image
-    twitter.profile_image_url_https
-  end
 end

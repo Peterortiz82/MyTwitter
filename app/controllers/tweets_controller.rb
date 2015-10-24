@@ -3,10 +3,9 @@ class TweetsController < ApplicationController
   before_action :signed_in_user
 
   def index
-    @user = current_user
     @tweets = Tweet.where(user_id: current_user.id).order(created_at: 'DESC')
-    @timeline = @user.timeline
-    @user_tweets = @user.user_tweets(@user)
+    @timeline = current_user.timeline
+    @user_tweets = current_user.user_tweets(current_user)
   end
 
   def new
