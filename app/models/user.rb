@@ -28,6 +28,9 @@ class User < ActiveRecord::Base
                 nickname: auth_hash.info.nickname,
                 image: auth_hash.info.image,
                 profile_image_url: auth_hash.extra.raw_info.profile_image_url.gsub('_normal', ''),
+                followers_count: auth_hash.extra.raw_info.followers_count,
+                friends_count: auth_hash.extra.raw_info.friends_count,
+                statuses_count: auth_hash.extra.raw_info.statuses_count,
                 description: auth_hash.info.description,
                 token: auth_hash.credentials.token,
                 secret: auth_hash.credentials.secret
@@ -50,4 +53,5 @@ class User < ActiveRecord::Base
   def timeline
     twitter.home_timeline
   end
+
 end

@@ -2,10 +2,15 @@
 @import "bootstrap";
 
 body {
-	background-color: rgba(245, 245, 245, 0.45);
+	background-color: #F5F8FA;
 }
 
 h1 {
+	color: #6897BD;
+	font-family: 'Roboto', sans-serif;
+}
+
+h3 {
 	color: #6897BD;
 	font-family: 'Roboto', sans-serif;
 }
@@ -40,12 +45,31 @@ tweet-text {
 }
 
 location {
-	color: #777777;
+	//color: #777777;
+	font-size: 1.1em;
 }
 
 name {
 	color: #6897BD;
 	font-size: 1.8em;
+	font-weight: 500;
+}
+stat-name {
+	font-size: smaller;
+	color: #777777;
+}
+
+stat-number {
+	color: #6897BD;
+	font-size: 1.6em;
+}
+.table {
+	margin-bottom: 5px;
+}
+
+.col-lg-1 {
+	padding-left: 0;
+	padding-top: 5px;
 }
 
 .navbar-brand {
@@ -102,6 +126,7 @@ name {
 }
 
 .panel-default {
+	border-color: #eeeeee;
 	margin-top: 25px;
 }
 
@@ -111,7 +136,14 @@ name {
 }
 
 .panel-default > .panel-heading {
+	border-color: #eeeeee;
 	background-color: #FFFFFF;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+	padding: 10px 16px;
+	font-size: 1.1em;
+	line-height: 1.3333333;
 }
 
 .btn-primary {

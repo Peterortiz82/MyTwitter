@@ -10,6 +10,24 @@
           %br
           %location
             = current_user.location
+          .stats
+            .table
+              .tr
+                .col-lg-1
+                  %stat-name
+                    %td FOLLOWING
+                  %stat-number
+                    = current_user.friends_count
+                .col-lg-1
+                  %stat-name
+                    %td FOLLOWERS
+                  %stat-number
+                    = current_user.followers_count
+                .col-lg-1
+                  %stat-name
+                    %td TWEETS
+                  %stat-number
+                    = current_user.statuses_count
   - if @user_tweets.empty?
     .col-md-8.pull-right#no_tweets
       .panel.panel-default
