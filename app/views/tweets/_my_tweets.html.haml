@@ -9,7 +9,7 @@
           = image_tag t.user.profile_image_url_https, class: 'media-object'
         .media-body
           %strong
-            = "@#{t.user.screen_name}"
+            = link_to "@#{t.user.screen_name}", "https://twitter.com/#{t.user.screen_name}"
           %time
             = time_ago_in_words t.created_at
             ago
