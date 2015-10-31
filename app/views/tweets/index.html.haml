@@ -8,7 +8,10 @@
           %name
             = current_user.name
           %br
+          %light-gray
+            = "@#{current_user.nickname}"
           %location
+            \|
             = current_user.location
           .stats
             .table
