@@ -4,17 +4,17 @@ describe 'Tweets index' do
   let(:user) { create :user }
   let(:other_user) { create :user, name: 'Other User' }
 
-  before {
+  before(:each) do
     signed_in_user(user)
     can_post_to_twitter(user)
     visit tweets_path
-  }
-
-  it 'has Tweets as a title' do
-    expect(page).to have_selector('h1', text: 'Tweets')
   end
 
-  it 'will display correct message when there are not tweets' do
+  it 'has Tweets as a title' do
+    expect(page).to have_selector('h3', text: 'Timeline')
+  end
+
+  it 'will display correct message when there are no tweets' do
     expect(page).to have_content 'Post your first tweet!'
   end
 
